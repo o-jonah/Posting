@@ -1,8 +1,23 @@
 export default function Page() {
   return (
-    <div>
-      <h1>Welcome Home!! </h1>
-      <p>You made it finally!!</p>
-    </div>
+    <>
+      <section className="pink_container">
+        <h1 className="heading">
+          Pitch Your Startup, <br />
+          Connect With Fellow Peers
+        </h1>
+
+        <p className="sub-heading !max-w-3xl">
+          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
+          Competitions.
+        </p>
+
+        
+      </section>
+
+      <section>
+        <SearchForm />
+      </section>
+
   );
 }
