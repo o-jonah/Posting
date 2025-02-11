@@ -1,3 +1,5 @@
+import SearchForm from "@/components/SearchForm";
+
 export default function Page() {
   return (
     <>
@@ -18,6 +20,8 @@ export default function Page() {
       <section>
         <SearchForm />
       </section>
+
+  </>    
 
   );
 }
