@@ -1,10 +1,18 @@
 import { cn, formatDate } from "@/lib/utils";
+import { Startup } from '@/types/Startup';
 import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Author, Startup } from "@/sanity/types";
 import { Skeleton } from "@/components/ui/skeleton";
+
+interface Author {
+  _id: string;
+  name: string;
+  image: string;
+}
+
+
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
 
@@ -40,13 +48,15 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           </Link>
         </div>
         <Link href={`/user/${author?._id}`}>
-          <Image
-            src={author.image!}
-            alt={author.name ?? 'Author'}
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
+          {author && (
+            <Image
+              src={author.image!}
+              alt={author.name ?? 'Author'}
+              width={48}
+              height={48}
+              className="rounded-full"
+            />
+          )}
         </Link>
       </div>
 
