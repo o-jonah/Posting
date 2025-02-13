@@ -1,37 +1,40 @@
-export const author = defineType( schemaDefinition {
+import { defineField, defineType } from "sanity";
+import { UserIcon } from "lucide-react";
+
+export const author = defineType({
   name: "author",
   title: "Author",
   type: "document",
-  icon: "UserIcon",
+  icon: UserIcon,
   fields: [
-    defineField( schemaField {
+    defineField({
       name: "id",
-      type: "number"
+      type: "number",
     }),
-    defineField( schemaField {
+    defineField({
       name: "name",
-      type: "string"
+      type: "string",
     }),
-    defineField( schemaField {
+    defineField({
       name: "username",
-      type: "string"
+      type: "string",
     }),
-    defineField( schemaField {
+    defineField({
       name: "email",
-      type: "string"
+      type: "string",
     }),
-    defineField( schemaField {
+    defineField({
       name: "image",
-      type: "string"
+      type: "url",
     }),
-    defineField( schemaField {
+    defineField({
       name: "bio",
-      type: "text"
+      type: "text",
     }),
   ],
   preview: {
     select: {
-      title: "name"
-    }
-  }
-})
+      title: "name",
+    },
+  },
+});
